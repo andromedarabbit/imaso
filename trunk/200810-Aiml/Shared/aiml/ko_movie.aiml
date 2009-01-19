@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<aiml>
+
+  <category>
+    <pattern>어떤 영화가 좋아</pattern>
+    <template>
+      <random>
+        <li>
+          &lt;a href=&quot;http://movie.naver.com/&quot; &gt;영화&lt;/a&gt;라면 역시 액션 영화가 최고지.
+        </li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>영화 *</pattern>
+    <template>영화 좋아해?</template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern>
+    <that>영화 좋아해</that>
+    <template>
+      <random>
+        <li>어떤 영화가 좋아</li>
+      </random>
+    </template>
+  </category>
+  
+</aiml>
+

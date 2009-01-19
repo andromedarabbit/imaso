@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AIMLGUI.vs2008">
+</Property><Property Name="Solution File" Value="D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\AIMLGUI.vs2008.sln">
+</Property><Property Name="Date" Value="2008년 8월 28일 목요일">
+</Property><Property Name="Time" Value="오전 10:27">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="AIMLGUI.vs2008.sln" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI.vs2008.sln">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\AIMLGUI.vs2008.csproj" Description="Project file successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\AIMLGUI.vs2008.csproj">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\aimlForm.cs" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\aimlForm.cs">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\aimlForm.Designer.cs" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\aimlForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\aimlgui.cs" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\aimlgui.cs">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\Properties\Resources.Designer.cs" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\Properties\Settings.Designer.cs" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\ViewInformation.cs" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\ViewInformation.cs">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\ViewInformation.Designer.cs" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\ViewInformation.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\Properties\Settings.settings" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\About.txt" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\About.txt">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\License.txt" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\License.txt">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\aimlForm.resx" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\aimlForm.resx">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\Properties\Resources.resx" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\ViewInformation.resx" Description="File successfully backed up as D:\workspace\cuckoo-trunk\server\src\Aiml\AIMLGUI\Backup\AIMLGUI\ViewInformation.resx">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\AIMLGUI.vs2008.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="AIMLGUI.vs2008" Source="AIMLGUI\AIMLGUI.vs2008.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="AIMLGUI.vs2008.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="AIMLGUI.vs2008.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="AIMLGUI.vs2008" Source="AIMLGUI\AIMLGUI.vs2008.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

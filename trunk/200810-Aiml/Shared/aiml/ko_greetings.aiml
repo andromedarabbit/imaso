@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<aiml>
+<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated September 2003 -->
+  
+  <!-- 인사말 동의어 -->
+  <category>
+    <pattern>P안녕</pattern>
+    <template>
+      <random>
+        <li>안녕?</li>
+        <li>너 나 알어?</li>
+        <li>반갑구랴</li>
+        <li>님 누구삼?</li>        
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>안녕</pattern>
+    <template>
+      <srai>P안녕</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>hi</pattern>
+    <template>
+      <srai>P안녕</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>hello</pattern>
+    <template>
+      <srai>P안녕</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>반가워</pattern>
+    <template>
+      <srai>P안녕</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>방가</pattern>
+    <template>
+      <srai>P안녕</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>내 이름은 *</pattern>
+    <template>
+      네 이름이 &lt;strong&gt;<person/>&lt;/strong&gt; 맞지? 기억해둘께.
+    </template>
+  </category>
+
+
+  <category>
+    <pattern>그 사람 누구니</pattern>
+    <template>
+      나도 몰라.
+    </template>
+  </category>
+  
+  <category>
+    <pattern>그 사람 누구야</pattern>
+    <template><srai>P그사람누구야 <get name="그사람"/></srai>
+    </template>
+  </category>
+  <category>
+    <pattern>P그사람누구야 *</pattern>
+    <template>
+       <get name="그사람"/>라는 사람이야.
+    </template>
+  </category>
+  <category>
+    <pattern>P그사람누구야 아무개</pattern>
+    <template>
+      나도 몰라
+    </template>
+  </category>
+
+  <category>
+    <pattern>P너 누구야</pattern>
+    <template>
+      <random>
+        <li>
+          난 <bot name="봇이름"/>이라고 해
+        </li>
+        <li>
+          <bot name="봇이름"/>라 불러주면 좋겠어
+        </li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>* 누구야</pattern>
+    <template>
+      <random>
+        <li>
+          나도 몰라.
+        </li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>* 누군지 알아</pattern>
+    <template>
+      <srai><star/> 누구야</srai>
+    </template>
+  </category>
+</aiml>
+
+
