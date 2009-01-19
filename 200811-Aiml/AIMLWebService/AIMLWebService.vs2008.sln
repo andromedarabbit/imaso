@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIMLWebService", "AIMLWebService\AIMLWebService.vs2008.csproj", "{21862DB0-BB5C-4910-B1B4-B2AF26BF1B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIMLbot.vs2008", "..\AIMLbot\AIMLbot\AIMLbot.vs2008.csproj", "{9C87D82C-0E27-4995-A2CB-72BCB84EF2E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21862DB0-BB5C-4910-B1B4-B2AF26BF1B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21862DB0-BB5C-4910-B1B4-B2AF26BF1B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21862DB0-BB5C-4910-B1B4-B2AF26BF1B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21862DB0-BB5C-4910-B1B4-B2AF26BF1B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C87D82C-0E27-4995-A2CB-72BCB84EF2E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C87D82C-0E27-4995-A2CB-72BCB84EF2E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C87D82C-0E27-4995-A2CB-72BCB84EF2E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C87D82C-0E27-4995-A2CB-72BCB84EF2E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

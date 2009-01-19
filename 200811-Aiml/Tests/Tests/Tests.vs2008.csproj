@@ -1,0 +1,177 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{716D6FC9-DC47-472B-A4B2-A1B5DDBA93A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tests</RootNamespace>
+    <AssemblyName>Tests</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>http://localhost/Tests/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\vendor\dotnet-vendor-library\NUnit-2.4.8-net-2.0\bin\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIMLTagHandlers\josaTagTests.cs" />
+    <Compile Include="Normalize\StringNormailzationTests.cs" />
+    <Compile Include="StaticHelpers.cs" />
+    <Compile Include="Utils\AIMLLoaderTests.cs" />
+    <Compile Include="AIMLTagHandlers\botTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\conditionTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\dateTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\formalTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\genderTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\getTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\gossipTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\idTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\inputTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\javascriptTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\learnTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\lowercaseTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\person2TagTests.cs" />
+    <Compile Include="AIMLTagHandlers\personTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\randomTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\sentenceTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\setTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\sizeTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\sraiTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\srTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\starTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\systemTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\thatstarTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\thatTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\thinkTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\topicstarTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\uppercaseTagTests.cs" />
+    <Compile Include="AIMLTagHandlers\versionTagTests.cs" />
+    <Compile Include="Normalize\ApplySubstitutionsTests.cs" />
+    <Compile Include="BotTests.cs" />
+    <Compile Include="Normalize\MakeCaseInsensitiveTests.cs" />
+    <Compile Include="RequestTests.cs" />
+    <Compile Include="ResultTests.cs" />
+    <Compile Include="Utils\NodeTests.cs" />
+    <Compile Include="Utils\SettingsDictionaryTests.cs" />
+    <Compile Include="Normalize\SplitIntoSentencesTests.cs" />
+    <Compile Include="Normalize\StripIllegalCharactersTests.cs" />
+    <Compile Include="Utils\TextTransformerTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AIMLbot\AIMLbot\AIMLbot.vs2008.csproj">
+      <Project>{9C87D82C-0E27-4995-A2CB-72BCB84EF2E2}</Project>
+      <Name>AIMLbot.vs2008</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\imedia,AimlTags\imedia.AimlTags.csproj">
+      <Project>{7947849D-93D9-4FBB-9B4E-6BE609B79640}</Project>
+      <Name>imedia.AimlTags</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Settings\aiml\Salutations.aiml" />
+    <None Include="Settings\aiml\srai.aiml" />
+    <None Include="Settings\aiml\testNoThat.aiml" />
+    <None Include="Settings\aiml\testThat.aiml" />
+    <None Include="Settings\aiml\testWildcards.aiml" />
+    <None Include="Settings\aiml\TopicTest.aiml" />
+    <None Include="Settings\badaiml\badlyFormed.aiml" />
+    <None Include="Settings\badaiml\missingPattern.aiml" />
+    <None Include="Settings\badaiml\missingTemplate.aiml" />
+    <None Include="Settings\Graphmaster.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Settings\configAlt\DefaultPredicatesAlt.xml" />
+    <Content Include="Settings\configAlt\GenderSubstitutionsAlt.xml" />
+    <Content Include="Settings\configAlt\Person2SubstitutionsAlt.xml" />
+    <Content Include="Settings\configAlt\PersonSubstitutionsAlt.xml" />
+    <Content Include="Settings\configAlt\SettingsAlt.xml" />
+    <Content Include="Settings\configAlt\SettingsAltBad.xml" />
+    <Content Include="Settings\configAlt\SplittersAlt.xml" />
+    <Content Include="Settings\configAlt\SubstitutionsAlt.xml" />
+    <Content Include="Settings\config\DefaultPredicates.xml" />
+    <Content Include="Settings\config\GenderSubstitutions.xml" />
+    <Content Include="Settings\config\Person2Substitutions.xml" />
+    <Content Include="Settings\config\PersonSubstitutions.xml" />
+    <Content Include="Settings\config\Settings.xml" />
+    <Content Include="Settings\config\SettingsBad.xml" />
+    <Content Include="Settings\config\SettingsValidIncorrect.xml" />
+    <Content Include="Settings\config\Splitters.xml" />
+    <Content Include="Settings\config\Substitutions.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Settings\aimlEmpty\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>XCOPY /Y  /S /E "$(ProjectDir)Settings\*" "$(TargetDir)"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

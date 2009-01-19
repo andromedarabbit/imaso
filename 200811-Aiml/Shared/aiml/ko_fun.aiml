@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<aiml>
+
+  <category>
+    <pattern>*과 *중에 하나 골라봐</pattern>
+    <template>
+      <star/>
+    </template>
+  </category>
+  <category>
+    <pattern>너 *가 뭔지 알아</pattern>
+    <template>
+      <star/>를 내가 어떻게 알아.
+    </template>
+  </category>
+  <category>
+    <pattern>*가 뭔지 알아</pattern>
+    <template>
+      <star/>를 내가 어떻게 알아.
+    </template>
+  </category>
+ 
+
+  <category>
+    <pattern>조사 테스트</pattern>
+    <template>
+      <josa suffix="은는">조사</josa> 처리하기 힘들다.
+      <josa suffix="은는">주식</josa> 어렵다.
+      <josa suffix="을를">대통령</josa> 싫어하다.
+
+      <josa suffix="이가">바이러스</josa> 싫다.
+      <josa suffix="이가">책</josa> 좋다.
+
+      <josa suffix="과와">공돌이</josa> 공순이.
+      <josa suffix="과와">장난감</josa> 아이.
+
+      <josa suffix="은는">hello</josa> 영어다.
+      <josa suffix="은는">hell</josa> 영어다.
+    </template>
+  </category>
+  <category>
+    <pattern>너 *가 누군지 알아</pattern>
+    <template>
+      <josa suffix="을를"><star/></josa> 내가 어떻게 알아.
+    </template>
+  </category>
+</aiml>
+
