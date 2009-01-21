@@ -1,0 +1,108 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{969A2EAE-C5BF-41A0-B8AF-61EF2A248EE5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SystemMonitor</RootNamespace>
+    <AssemblyName>SystemMonitor</AssemblyName>
+    <ApplicationIcon>SystemMonitor.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\NotifierElement.cs" />
+    <Compile Include="Configuration\NotifierElementCollection.cs" />
+    <Compile Include="Configuration\MonitorElementCollection.cs" />
+    <Compile Include="Configuration\MonitorsSection.cs" />
+    <Compile Include="Configuration\MonitorElement.cs" />
+    <Compile Include="Configuration\SettingElement.cs" />
+    <Compile Include="Configuration\SettingElementCollection.cs" />
+    <Compile Include="Monitors\NetworkAvailabilityMonitor.cs" />
+    <Compile Include="Monitors\PingMonitor.cs" />
+    <Compile Include="Monitors\DiskSpaceMonitor.cs" />
+    <Compile Include="Monitors\SocketMonitor.cs" />
+    <Compile Include="Notifiers\BalloonTipNotifier.cs" />
+    <Compile Include="Notifiers\EventLogNotifier.cs" />
+    <Compile Include="TaskStatus.cs" />
+    <Compile Include="MonitorType.cs" />
+    <Compile Include="Notifiers\EmailNotifier.cs" />
+    <Compile Include="Notifiers\MessageBoxNotifier.cs" />
+    <Compile Include="Forms\TaskListViewItem.cs" />
+    <Compile Include="Monitors\EventLogMonitor.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMonitor.cs" />
+    <Compile Include="INotifier.cs" />
+    <Compile Include="Monitors\MonitorBase.cs" />
+    <Compile Include="Notifiers\NotifierBase.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Task.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_first_try.config" />
+    <None Include="Resources\Disk.ico" />
+    <None Include="Resources\EventViewer.ico" />
+    <None Include="Resources\Ping.ico" />
+    <None Include="Resources\NetworkAvailabilityIcon.ico" />
+    <None Include="Resources\Socket.ico" />
+    <Content Include="SystemMonitor.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
