@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost/ContentManager/", "http://localhost/ContentManager", "{C4AA2BF2-EE18-42EB-915D-A1E24F266FAB}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/ContentManager"
+		Debug.AspNetCompiler.PhysicalPath = "ContentManager\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ContentManager\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ContentManager"
+		Release.AspNetCompiler.PhysicalPath = "ContentManager\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ContentManager\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "ContentManager\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Release|.NET = Release|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4AA2BF2-EE18-42EB-915D-A1E24F266FAB}.Debug|.NET.ActiveCfg = Debug|.NET
+		{C4AA2BF2-EE18-42EB-915D-A1E24F266FAB}.Debug|.NET.Build.0 = Debug|.NET
+		{C4AA2BF2-EE18-42EB-915D-A1E24F266FAB}.Release|.NET.ActiveCfg = Release|.NET
+		{C4AA2BF2-EE18-42EB-915D-A1E24F266FAB}.Release|.NET.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

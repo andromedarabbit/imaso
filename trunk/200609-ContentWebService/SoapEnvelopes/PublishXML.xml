@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <PublishXML xmlns="urn:webservices-paulsoftware-com-content">
+      <contentItems>
+        <Any>
+           <testDocument>
+             <FileName>test1.xml</FileName>
+             <info>
+               Any well formed xml can be included in the documents published via the PublishXML method.
+               <moreinfo>Each document must have a 'FileName' element, which specifies the file name that
+                         will be given to the file created in the Content Directory
+                 <moreinfo>Each 'document' must be enclosed in a single xml element 
+                         (the 'testDocument' element, in this example).
+                 </moreinfo>
+               </moreinfo>
+              </info>
+           </testDocument>
+        </Any>
+        <Any>
+           <anotherDocument>
+             <FileName>test2.xml</FileName>
+             <also>Multiple documents can be published via a single call to PublishXML.</also>
+             <note>Documents with the same FileName will be overwritten in this example
+                   but the constructor of the DocumentXML object could check for this condition.</note>
+           </anotherDocument>
+        </Any>
+      </contentItems>
+    </PublishXML>
+  </soap:Body>
+</soap:Envelope>

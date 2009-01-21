@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ContentManager">
+</Property><Property Name="솔루션 파일" Value="C:\ContentWebService\ContentManager.sln">
+</Property><Property Name="사용자 옵션 파일" Value="C:\ContentWebService\ContentManager.suo">
+</Property><Property Name="Date" Value="2006년 7월 31일 월요일">
+</Property><Property Name="Time" Value="오후 18:41">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="ContentManager.sln" Description="파일을 C:\ContentWebService\Backup\ContentManager.sln(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="" Source="ContentManager.suo" Description="파일을 C:\ContentWebService\Backup\ContentManager.suo(으)로 백업했습니다.">
+</Event><Event ErrorLevel="1" Project="ContentManager" Source="http://localhost/ContentManager/ContentManager.csproj" Description="경고: 원래 솔루션 상대 경로와 다른 상대 경로에 프로젝트 파일을 백업하고 있습니다. 폴더 계층 구조가 다르면 백업한 솔루션 및 프로젝트를 열거나 빌드하는 데 문제가 발생할 수 있습니다.">
+</Event><Event ErrorLevel="0" Project="" Source="ContentManager.sln" Description="솔루션을 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="" Source="ContentManager.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ContentManager.csproj" Source="ContentManager.csproj" Description="변환되었습니다.&#xA;해결되지 않은 변환 문제가 있으면 직접 수정해야 합니다. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkId=46995를 참조하거나 도움말에서 &quot;Visual Studio .NET 2002 또는 2003에서 변환&quot; 항목을 참조하십시오.">
+</Event><Event ErrorLevel="3" Project="ContentManager.csproj" Source="ContentManager.csproj" Description="Converted">
+</Event></UpgradeLog>
