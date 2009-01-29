@@ -75,7 +75,7 @@ public:
 
 	inline double TotalSeconds() const
 	{
-		return (m_Time * 0.0001);
+		return (m_Time * 1E-07);
 	}
 
 	inline double TotalMilliseconds() const
