@@ -149,6 +149,40 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\Log.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\LogManaged.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						MinimalRebuild="false"
+						ExceptionHandling="2"
+						BasicRuntimeChecks="0"
+						PrecompiledHeaderThrough="StdAfx_clr.h"
+						PrecompiledHeaderFile="$(IntDir)\$(TargetName)_clr.pch"
+						DebugInformationFormat="3"
+						CompileAsManaged="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ExceptionHandling="2"
+						PrecompiledHeaderThrough="StdAfx_clr.h"
+						PrecompiledHeaderFile="$(IntDir)\$(TargetName)_clr.pch"
+						DebugInformationFormat="3"
+						CompileAsManaged="1"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath=".\MarshalAs.cpp"
 				>
 				<FileConfiguration
@@ -240,6 +274,14 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\Log.h"
+				>
+			</File>
+			<File
+				RelativePath=".\LogManaged.h"
+				>
+			</File>
 			<File
 				RelativePath=".\MarshalAs.h"
 				>
