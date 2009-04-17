@@ -115,7 +115,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;..\UnitTest++\src&quot;"
+				AdditionalIncludeDirectories="&quot;..\UnitTest++\src&quot;; &quot;..\TimeLib&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
