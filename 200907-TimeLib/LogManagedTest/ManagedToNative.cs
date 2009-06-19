@@ -5,9 +5,9 @@ using System.Text;
 
 namespace LogManagedTest
 {
-    class Program
+    public class ManagedToNative
     {
-        static void Main(string[] args)
+        public static void CallMe()
         {
             LogManaged.Write("does it work?");
         }
