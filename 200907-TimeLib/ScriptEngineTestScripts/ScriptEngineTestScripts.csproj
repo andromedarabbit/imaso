@@ -5,21 +5,19 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{18AED03F-B98D-4C94-8A46-72B04D1F7BF9}</ProjectGuid>
+    <ProjectGuid>{81676556-0559-454E-85E7-A1B23A8CEA86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogManagedTest</RootNamespace>
-    <AssemblyName>LogManagedTest</AssemblyName>
+    <RootNamespace>ScriptEngineTestScripts</RootNamespace>
+    <AssemblyName>ScriptEngineTestScripts</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>
-    </StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Any CPU\Debug\Scripts\Assemblies\</OutputPath>
+    <OutputPath>..\Any CPU\Debug\TestScripts\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,21 +25,21 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Any CPU\Release\Scripts\Assemblies\</OutputPath>
+    <OutputPath>..\Any CPU\Release\TestScripts\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\x86\Debug\Scripts\Assemblies\</OutputPath>
+    <OutputPath>..\x86\Debug\TestScripts\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>..\x86\Release\Scripts\Assemblies\</OutputPath>
+    <OutputPath>..\x86\Release\TestScripts\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -63,18 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManagedToNative.cs" />
-    <Compile Include="NativeToManaged.cs" />
+    <Compile Include="ChatMsgReceivedEventScript.cs" />
+    <Compile Include="HelpMethodScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ScriptEngineTest\ScriptEngineTest.csproj">
+      <Project>{14BAF689-7A1D-45F8-97FC-E3F97D7C92F2}</Project>
+      <Name>ScriptEngineTest</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
       <Project>{3CF17091-37E3-4E95-BA51-A0268006F7D7}</Project>
       <Name>ScriptEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TimeLib\TimeLib.vcproj">
-      <Project>{5EA7CBD1-8FDA-4CD2-8BE7-FAF314503A27}</Project>
-      <Name>TimeLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
