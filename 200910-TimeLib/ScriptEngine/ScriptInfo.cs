@@ -6,10 +6,16 @@ using System.Diagnostics;
 
 namespace ScriptEngine
 {
-    public struct ScriptInfo
+    public class ScriptInfo
     {
         private readonly string _asm;
         private readonly string _classType;
+
+        public ScriptInfo()
+            : this(string.Empty, string.Empty)
+        {
+            
+        }
 
         public ScriptInfo(string asm, string classType)
         {

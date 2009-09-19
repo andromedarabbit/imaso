@@ -10,6 +10,8 @@ using ScriptEngine;
 
 namespace ScriptEngineTest
 {
+    using Configuration;
+
     [TestFixture]
     public class PluginLoaderTest
     {
@@ -30,14 +32,13 @@ namespace ScriptEngineTest
         [Test]
         public void LoadAndUnload()
         {
-            const string asmName = "ScriptEngineTestScripts";
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string asmDir = Path.Combine(baseDir, @"TestScripts\Assemblies");
+            string asmName = AppConfiguration.TestAssemblyName;
+            string asmDir = AppConfiguration.TestAssemblyDir;
 
             Assert.IsFalse(CurrentDomainHasThisAsm(asmName));
             var count = AppDomain.CurrentDomain.GetAssemblies().Count();
 
-            var info = new ScriptInfo(asmName, "ScriptEngineTestScripts.JustAnotherScriptAssemblyFinder");
+            var info = new FirstInstanceInfo(asmName, "ScriptEngineTestScripts.JustAnotherScriptAssemblyFinder");
 
             using (var finder = new PluginLoader<ScriptAssemblyFinder>(asmDir, info))
             {
