@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
+using System.Diagnostics;
 
 namespace ScriptEngine
 {
-    internal class ScriptAssemblyFinder
+    public class ScriptAssemblyFinder : MarshalByRefObject
     {
         private readonly List<ScriptInfo> _goodTypes = new List<ScriptInfo>();
 
-        public ScriptInfo[] Search(string scriptDir)
+        public List<ScriptInfo> Search(string scriptDir)
         {
             _goodTypes.Clear();
             foreach (string path in Directory.GetFiles(scriptDir, "*.dll"))
@@ -21,7 +21,7 @@ namespace ScriptEngine
 
                 TryLoadingPlugin(asmName);
             }
-            return _goodTypes.ToArray<ScriptInfo>();
+            return _goodTypes.ToList<ScriptInfo>();
         }
 
         internal static bool IsScriptClass(Type t)
@@ -62,9 +62,21 @@ namespace ScriptEngine
 
         private void AddToGoodTypesCollection(Assembly asm, Type t)
         {
-            var info = new ScriptInfo(asm, t);
+            var info = new ScriptInfo(asm.FullName, t.FullName);
             _goodTypes.Add(info);
         }
 
+        internal bool CurrentDomainHasThisAsm(string asmName)
+        {
+            foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Debug.Assert(asm != null);
+                Debug.Assert(asm.FullName != null);
+
+                if (asm.FullName.Contains(asmName))
+                    return true;
+            }
+            return false;
+        }
     }
 }
