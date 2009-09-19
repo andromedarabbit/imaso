@@ -10,6 +10,8 @@ using NUnit.Framework;
 
 namespace ScriptEngineTest
 {
+    using Configuration;
+
     [TestFixture]
     public class ScriptAssemblyFinderTest
     {
@@ -55,13 +57,13 @@ namespace ScriptEngineTest
 
         #endregion 
 
-        /*
+        
         [Test]
         public void LoadScriptAssembly()
         {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string asmPath = Path.Combine(baseDir, @"TestScripts\Assemblies\ScriptEngineTestScripts.dll");
-
+            string asmPath = AppConfiguration.TestAssemblyPath;
+            
+            // TODO: 그냥 적재하면 안 되고 PluginLoader를 사용해야 한다.
             Assembly asm = Assembly.LoadFile(asmPath);
 
             var finder = new ScriptAssemblyFinder();
@@ -69,13 +71,14 @@ namespace ScriptEngineTest
 
             Assert.GreaterOrEqual(finder.NumberOfGoodTypes, 1);
         }
-
+        
         [Test]
         public void LoadNonScriptAssembly()
         {
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             string asmPath = Path.Combine(baseDir, @"ScriptEngine.dll");
 
+            // TODO: 그냥 적재하면 안 되고 PluginLoader를 사용해야 한다.
             Assembly asm = Assembly.LoadFile(asmPath);
 
             var finder = new ScriptAssemblyFinder();
@@ -83,7 +86,7 @@ namespace ScriptEngineTest
 
             Assert.AreEqual(finder.NumberOfGoodTypes, 0);
         }
-         * */
+        
     }
 }
 

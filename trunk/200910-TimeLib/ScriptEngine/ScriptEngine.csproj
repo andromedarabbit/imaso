@@ -64,6 +64,7 @@
     <Compile Include="AssemblyLoader.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="EventScriptAttribute.cs" />
+    <Compile Include="FirstInstanceInfo.cs" />
     <Compile Include="MethodScriptAttribute.cs" />
     <Compile Include="NativeToManagedCaller.cs" />
     <Compile Include="PluginFinder.cs" />

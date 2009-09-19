@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatMsgArgs.cs" />
+    <Compile Include="Configuration\AppConfiguration.cs" />
     <Compile Include="EventType.cs" />
     <Compile Include="HelpEventScriptTest.cs" />
     <Compile Include="ChatMsgReceivedScriptTest.cs" />
