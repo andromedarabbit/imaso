@@ -37,3 +37,4 @@ using System.Runtime.InteropServices;
 
 
 [assembly: InternalsVisibleTo("ScriptEngineTest")]
+[assembly: InternalsVisibleTo("ScriptEngineTestScripts")]

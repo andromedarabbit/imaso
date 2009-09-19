@@ -66,6 +66,8 @@
     <Compile Include="EventScriptAttribute.cs" />
     <Compile Include="MethodScriptAttribute.cs" />
     <Compile Include="NativeToManagedCaller.cs" />
+    <Compile Include="PluginFinder.cs" />
+    <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScriptAssemblyFinder.cs" />
     <Compile Include="ScriptEventArgs.cs" />

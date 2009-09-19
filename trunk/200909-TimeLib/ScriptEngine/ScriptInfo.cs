@@ -2,27 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
+using System.Diagnostics;
 
 namespace ScriptEngine
 {
-    struct ScriptInfo
+    public struct ScriptInfo
     {
-        private readonly Assembly _asm;
-        private readonly Type _classType;
+        private readonly string _asm;
+        private readonly string _classType;
 
-        public ScriptInfo(Assembly asm, Type classType)
+        public ScriptInfo(string asm, string classType)
         {
+            Debug.Assert( !string.IsNullOrEmpty(asm) );
+            Debug.Assert( !string.IsNullOrEmpty(classType) );
+
             _asm = asm;
             _classType = classType;
         }
 
-        public Assembly AssemblyIncluding
+        public string AssemblyIncluding
         {
             get { return _asm; }
         }
 
-        public Type ClassType
+        public string ClassType
         {
             get { return _classType;}
         }

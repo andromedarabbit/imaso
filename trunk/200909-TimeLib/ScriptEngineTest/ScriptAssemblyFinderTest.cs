@@ -55,6 +55,7 @@ namespace ScriptEngineTest
 
         #endregion 
 
+        /*
         [Test]
         public void LoadScriptAssembly()
         {
@@ -82,6 +83,7 @@ namespace ScriptEngineTest
 
             Assert.AreEqual(finder.NumberOfGoodTypes, 0);
         }
+         * */
     }
 }
 

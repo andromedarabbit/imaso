@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="ChatMsgReceivedEventScript.cs" />
     <Compile Include="HelpMethodScript.cs" />
+    <Compile Include="JustAnotherScriptAssemblyFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

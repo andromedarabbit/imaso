@@ -69,6 +69,7 @@
     <Compile Include="EventType.cs" />
     <Compile Include="HelpEventScriptTest.cs" />
     <Compile Include="ChatMsgReceivedScriptTest.cs" />
+    <Compile Include="PluginLoaderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScriptAssemblyFinderTest.cs" />
   </ItemGroup>
