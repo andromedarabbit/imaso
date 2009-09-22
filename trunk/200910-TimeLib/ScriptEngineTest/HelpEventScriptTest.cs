@@ -15,6 +15,9 @@ namespace ScriptEngineTest
         [ExpectedException(typeof(NotImplementedException))]
         public void DeliberatlyThrowException()
         {
+            var a = new ScriptInfo ();
+            Console.WriteLine(a);
+
             var engine = new Engine();
             engine.InvokeMethod("Help", "메시지");
         }

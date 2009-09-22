@@ -13,7 +13,7 @@ namespace ScriptEngineTest
     using Configuration;
 
     [TestFixture]
-    public class PluginLoaderTest
+    public class PluginFinderTest
     {
         private static bool CurrentDomainHasThisAsm(string asmName)
         {
@@ -32,30 +32,22 @@ namespace ScriptEngineTest
         [Test]
         public void LoadAndUnload()
         {
-            string asmName = "ScriptEngine"; 
-            // string asmName = AppConfiguration.TestAssembly2Name;
+            const string asmName = "ScriptEngine";
             string asmDir = AppDomain.CurrentDomain.BaseDirectory;
-            // string asmDir = AppConfiguration.TestAssembly2Dir;
 
-            //Assert.IsFalse(CurrentDomainHasThisAsm(asmName));
             var count = AppDomain.CurrentDomain.GetAssemblies().Count();
 
-            var info = new FirstInstanceInfo(asmName, asmName + ".ScriptAssemblyFinder");
-            // var info = new FirstInstanceInfo(asmName, asmName + ".JustAnotherScriptAssemblyFinder");
-
-            using (var finder = new PluginLoader<ScriptAssemblyFinder>(asmDir, info))
+            using (var finder = new PluginFinder(asmDir))
             {
-                Assert.IsFalse(finder.CurrentDomainHasThisAsm(asmName));
-                //Assert.IsFalse(CurrentDomainHasThisAsm(asmName));
-
                 finder.Load();
+                List<string> scripts = finder.GetScriptAssemblies();
+
+                Assert.AreEqual(2, scripts.Count);
 
                 Assert.IsTrue(finder.CurrentDomainHasThisAsm(asmName));
-                // Assert.IsFalse(CurrentDomainHasThisAsm(asmName));
                 Assert.AreEqual(count, AppDomain.CurrentDomain.GetAssemblies().Count());
             }
 
-            //Assert.IsFalse(CurrentDomainHasThisAsm(asmName));
             Assert.AreEqual(count, AppDomain.CurrentDomain.GetAssemblies().Count());
         }
 

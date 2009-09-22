@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{81676556-0559-454E-85E7-A1B23A8CEA86}</ProjectGuid>
+    <ProjectGuid>{EEE8E137-3108-47DE-B918-353B0293D546}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScriptEngineTestScripts</RootNamespace>
-    <AssemblyName>ScriptEngineTestScripts</AssemblyName>
+    <RootNamespace>ScriptEngineTestScripts2</RootNamespace>
+    <AssemblyName>ScriptEngineTestScripts2</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -61,8 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatMsgReceivedEventScript.cs" />
-    <Compile Include="HelpMethodScript.cs" />
+    <Compile Include="MsgEchoScript.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JustAnotherScriptAssemblyFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
