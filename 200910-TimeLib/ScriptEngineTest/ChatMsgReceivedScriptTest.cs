@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 
 using ScriptEngine;
-using ScriptEngineTestScripts;
 using NUnit.Framework;
+using ScriptEngineTestScripts;
 
 
 namespace ScriptEngineTest

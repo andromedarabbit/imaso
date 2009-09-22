@@ -9,11 +9,11 @@ namespace ScriptEngine
 {
     public class ScriptAssemblyFinder : MarshalByRefObject
     {
-        private readonly List<ScriptInfo> _goodTypes = new List<ScriptInfo>();
+        private readonly List<string> _scriptAssemblies = new List<string>();
 
-        public List<ScriptInfo> Search(string scriptDir)
+        public List<string> Search(string scriptDir)
         {
-            _goodTypes.Clear();
+            _scriptAssemblies.Clear();
             foreach (string path in Directory.GetFiles(scriptDir, "*.dll"))
             {
                 var file = new FileInfo(path);
@@ -21,14 +21,25 @@ namespace ScriptEngine
 
                 TryLoadingPlugin(asmName);
             }
-            return _goodTypes.ToList<ScriptInfo>();
+            return _scriptAssemblies.ToList<string>();
+        }
+
+        public int NumberOfScriptAssemblies
+        {
+            get
+            {
+                return _scriptAssemblies.Count;
+            }
         }
 
         internal static bool IsScriptClass(Type t)
         {
-            if (t.IsClass == false || t.IsAbstract == true)
+            if (t.IsClass == false || t.IsInterface == true)
                 return false;
 
+            if (t.IsAbstract == true && t.IsSealed == false) // static 클래스 == abstract seald
+                return false;
+            
             if (Attribute.IsDefined(t, typeof(EventScriptAttribute)) == true)
                 return true;
 
@@ -46,24 +57,28 @@ namespace ScriptEngine
 
         internal void TryLoadingPlugin(Assembly asm)
         {
+            Debug.Assert(asm != null);
+
+            string asmName = asm.FullName;
+            if(string.IsNullOrEmpty(asmName))
+                return;
+
+            // 약간의 최적화 코드: .NET Framework가 제공하는 기본 어셈블리라면 더 볼 것도 없다.
+            if (asmName.StartsWith("mscorlib")
+                 || asmName.StartsWith("System,")
+                 || asmName.StartsWith("System."))
+            {
+                return;
+            }
+
             foreach (Type t in asm.GetExportedTypes())
             {
-                if (IsScriptClass(t) == false)
-                    continue;
-
-                AddToGoodTypesCollection(asm, t);
+                if (IsScriptClass(t))
+                {
+                    _scriptAssemblies.Add(asm.FullName);
+                    return;
+                }
             }
-        }
-
-        internal int NumberOfGoodTypes
-        {
-            get { return _goodTypes.Count; }
-        }
-
-        private void AddToGoodTypesCollection(Assembly asm, Type t)
-        {
-            var info = new ScriptInfo(asm.FullName, t.FullName);
-            _goodTypes.Add(info);
         }
 
         internal bool CurrentDomainHasThisAsm(string asmName)

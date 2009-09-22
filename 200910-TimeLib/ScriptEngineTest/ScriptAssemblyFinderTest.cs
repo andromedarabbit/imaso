@@ -24,6 +24,9 @@ namespace ScriptEngineTest
         [EventScript(0)]
         public class TestEventScript
         {
+            public void Execute(ScriptEventArgs args)
+            {
+            }
         }
         
         #region IsScriptClass 
@@ -61,7 +64,7 @@ namespace ScriptEngineTest
         [Test]
         public void LoadScriptAssembly()
         {
-            string asmPath = AppConfiguration.TestAssemblyPath;
+            string asmPath = AppConfiguration.TestAssembly2Path;
             
             // TODO: 그냥 적재하면 안 되고 PluginLoader를 사용해야 한다.
             Assembly asm = Assembly.LoadFile(asmPath);
@@ -69,7 +72,7 @@ namespace ScriptEngineTest
             var finder = new ScriptAssemblyFinder();
             finder.TryLoadingPlugin(asm);
 
-            Assert.GreaterOrEqual(finder.NumberOfGoodTypes, 1);
+            Assert.GreaterOrEqual(finder.NumberOfScriptAssemblies, 1);
         }
         
         [Test]
@@ -84,7 +87,7 @@ namespace ScriptEngineTest
             var finder = new ScriptAssemblyFinder();
             finder.TryLoadingPlugin(asm);
 
-            Assert.AreEqual(finder.NumberOfGoodTypes, 0);
+            Assert.AreEqual(finder.NumberOfScriptAssemblies, 0);
         }
         
     }

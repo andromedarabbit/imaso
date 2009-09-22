@@ -62,8 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyLoader.cs" />
-    <Compile Include="Engine.cs" />
+    <Compile Include="Engine.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="EventScriptAttribute.cs" />
+    <Compile Include="EventScriptInvoker.cs" />
     <Compile Include="FirstInstanceInfo.cs" />
     <Compile Include="MethodScriptAttribute.cs" />
     <Compile Include="NativeToManagedCaller.cs" />
@@ -73,6 +76,10 @@
     <Compile Include="ScriptAssemblyFinder.cs" />
     <Compile Include="ScriptEventArgs.cs" />
     <Compile Include="ScriptInfo.cs" />
+    <Compile Include="ScriptManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMethodInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

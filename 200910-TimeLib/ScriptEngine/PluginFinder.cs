@@ -5,19 +5,19 @@ using System.Reflection;
 
 namespace ScriptEngine
 {
-    class PluginFinder : PluginLoader<ScriptAssemblyFinder>
+    public class PluginFinder : PluginLoader<ScriptAssemblyFinder>
     {
         public PluginFinder(string pluginDirectory)
             : base(
-                pluginDirectory, new ScriptInfo()
+                pluginDirectory, new ScriptInfo("ScriptEngine", "ScriptEngine.ScriptAssemblyFinder")
             )
         {
           
         }
 
-        public List<ScriptInfo> GetScripts(string dirPath)
+        public List<string> GetScriptAssemblies()
         {
-            return AssemblyFinder.Search(dirPath);
+            return AssemblyFinder.Search(this.PluginDirectory);
         }
 
 

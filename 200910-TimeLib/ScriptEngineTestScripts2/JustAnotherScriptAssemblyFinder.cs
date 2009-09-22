@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ScriptEngine;
 
-namespace ScriptEngineTestScripts
+namespace ScriptEngineTestScripts2
 {
     public class JustAnotherScriptAssemblyFinder : ScriptAssemblyFinder
     {

@@ -24,6 +24,7 @@ namespace ScriptEngine
             _pluginDirectory = pluginDirectory;
         }
 
+
       
         #region IDisposable 구현
 
@@ -136,6 +137,10 @@ namespace ScriptEngine
             return domain.Load(AssemblyName.GetAssemblyName(path));
         }
          * */
+        public string PluginDirectory
+        {
+            get { return _pluginDirectory; }
+        }
 
         public void Unload()
         {
@@ -155,7 +160,10 @@ namespace ScriptEngine
         {
             var instance = _assemblyFinder as ScriptAssemblyFinder;
             if (instance == null)
-                throw new ApplicationException();
+            {
+                // throw new ApplicationException();
+                return false;
+            }
             return instance.CurrentDomainHasThisAsm(asmName);
         }
     }

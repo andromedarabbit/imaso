@@ -6,6 +6,7 @@ using System.Diagnostics;
 
 namespace ScriptEngine
 {
+    [Serializable]
     public class ScriptInfo
     {
         private readonly string _asm;
@@ -19,8 +20,8 @@ namespace ScriptEngine
 
         public ScriptInfo(string asm, string classType)
         {
-            Debug.Assert( !string.IsNullOrEmpty(asm) );
-            Debug.Assert( !string.IsNullOrEmpty(classType) );
+            // Debug.Assert( !string.IsNullOrEmpty(asm) );
+            // Debug.Assert( !string.IsNullOrEmpty(classType) );
 
             _asm = asm;
             _classType = classType;

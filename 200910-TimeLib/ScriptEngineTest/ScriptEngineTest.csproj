@@ -70,15 +70,20 @@
     <Compile Include="EventType.cs" />
     <Compile Include="HelpEventScriptTest.cs" />
     <Compile Include="ChatMsgReceivedScriptTest.cs" />
+    <Compile Include="PluginFinderTest.cs" />
     <Compile Include="PluginLoaderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScriptAssemblyFinderTest.cs" />
+    <Compile Include="ScriptManagerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScriptEngine\ScriptEngine.csproj">
       <Project>{3CF17091-37E3-4E95-BA51-A0268006F7D7}</Project>
       <Name>ScriptEngine</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
