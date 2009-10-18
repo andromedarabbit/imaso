@@ -69,6 +69,7 @@
     <Compile Include="EventScriptInvoker.cs" />
     <Compile Include="FirstInstanceInfo.cs" />
     <Compile Include="MethodScriptAttribute.cs" />
+    <Compile Include="MethodScriptInvoker.cs" />
     <Compile Include="NativeToManagedCaller.cs" />
     <Compile Include="PluginFinder.cs" />
     <Compile Include="PluginLoader.cs" />

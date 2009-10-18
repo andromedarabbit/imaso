@@ -34,6 +34,7 @@ namespace ScriptEngineTest
         {
             const string asmName = "ScriptEngine";
             string asmDir = AppDomain.CurrentDomain.BaseDirectory;
+            asmDir = Path.Combine(asmDir, "TestScripts\\Assemblies");
 
             var count = AppDomain.CurrentDomain.GetAssemblies().Count();
 

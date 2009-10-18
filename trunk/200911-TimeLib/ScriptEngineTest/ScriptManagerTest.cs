@@ -17,9 +17,9 @@ namespace ScriptEngineTest
     public class ScriptManagerTest
     {     
         [Test]
-        public void LoadAndUnload()
+        public void InvokeEventTest()
         {
-            string asmName = AppConfiguration.TestAssembly2Name;
+            // string asmName = AppConfiguration.TestAssembly2Name;
             string asmDir = AppConfiguration.TestAssembly2Dir;
 
             var count = AppDomain.CurrentDomain.GetAssemblies().Count();
@@ -37,6 +37,25 @@ namespace ScriptEngineTest
 
             Assert.AreEqual(newCount, AppDomain.CurrentDomain.GetAssemblies().Count());
         }
-        
+
+        [Test]
+        public void InvokeMethodTest()
+        {
+            string asmDir = AppConfiguration.TestAssembly2Dir;
+
+            var count = AppDomain.CurrentDomain.GetAssemblies().Count();
+            int newCount = 0;
+
+            using (var scriptManger = new ScriptManager(asmDir))
+            {
+                scriptManger.Initialize();
+                newCount = AppDomain.CurrentDomain.GetAssemblies().Count();
+                Assert.GreaterOrEqual(newCount, count);
+
+                scriptManger.InvokeMethod("Help", "scriptlist");
+            }
+
+            Assert.AreEqual(newCount, AppDomain.CurrentDomain.GetAssemblies().Count());
+        }
     }
 }
