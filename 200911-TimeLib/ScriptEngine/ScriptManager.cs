@@ -11,11 +11,13 @@ namespace ScriptEngine
     {
         private readonly PluginFinder _pluginFinder;
         private readonly Dictionary<long, EventScriptInvoker> _eventInvokers;
+        private readonly Dictionary<string, MethodScriptInvoker> _methodInvokers;
 
         public ScriptManager(string pluginDirectory)
         {
             _pluginFinder = new PluginFinder(pluginDirectory);
             _eventInvokers = new Dictionary<long, EventScriptInvoker>();
+            _methodInvokers = new Dictionary<string, MethodScriptInvoker>();
         }
 
         public void Initialize()
@@ -140,7 +142,26 @@ namespace ScriptEngine
 
                     if (Attribute.IsDefined(t, typeof(MethodScriptAttribute)) == true)
                     {
-                        // TODO: 나중에 구현하자
+                        object[] methodAttrs = t.GetCustomAttributes(typeof(MethodScriptAttribute), false);
+                        foreach (MethodScriptAttribute methodAttr in methodAttrs)
+                        {
+                            Debug.Assert(methodAttr != null);
+
+                            var methodName = methodAttr.Name;
+
+                            MethodInfo methodInfo = t.GetMethod("Execute", BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public);
+                            Debug.Assert(methodInfo != null);
+                            var scriptMethod = new ScriptMethodInfo(t, methodInfo);
+
+                            MethodScriptInvoker invoker = null;
+                            if (_methodInvokers.TryGetValue(methodName, out invoker))
+                            {
+                                throw new ApplicationException("Two different method scripts with the same name found: " + methodName);
+                            }
+                            
+                            invoker = new MethodScriptInvoker(methodName, scriptMethod);
+                            _methodInvokers.Add(methodName, invoker);
+                        }
                     }
                 }
             }
@@ -154,6 +175,20 @@ namespace ScriptEngine
             if (_eventInvokers.TryGetValue(args.EventNo, out invoker) == false)
             {
                 var msg = string.Format("이벤트 번호 {0}짜리 스크립트는 없습니다.", args.EventNo);
+                throw new ApplicationException(msg);
+            }
+
+            invoker.Invoke(args);
+        }
+
+        public void InvokeMethod(string methodName, params object[] args)
+        {
+            Debug.Assert( string.IsNullOrEmpty(methodName) == false );
+            
+            MethodScriptInvoker invoker;
+            if (_methodInvokers.TryGetValue(methodName, out invoker) == false)
+            {
+                var msg = string.Format("{0}인 이름을 가진 메서드형 스크립트는 없습니다.", methodName);
                 throw new ApplicationException(msg);
             }
 
