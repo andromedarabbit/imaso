@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!-- Special characters -->  
+	<PropertyGroup>  
+		<Semicolon>%3b</Semicolon>  
+		 
+		<Ampersand>&amp;</Ampersand>
+		<LeftAngleBracket>&lt;</LeftAngleBracket>
+		<RightAngleBracket>&gt;</RightAngleBracket>
+		<StraightQuotationMark>&quot;</StraightQuotationMark>
+		<Quot>$(StraightQuotationMark)</Quot>
+		<Apostrophe>&apos;</Apostrophe>
+	</PropertyGroup>  
+
+	<!-- Folders -->
+	<PropertyGroup>
+		<RootDir>$(MSBuildProjectDirectory)</RootDir>
+		
+		<SharedDir>$(RootDir)\..\Shared</SharedDir>
+		<EarlgreyDir>$(SharedDir)\Earlgrey</EarlgreyDir>
+	</PropertyGroup>
+
+	<!-- Tools -->
+	<PropertyGroup>
+		<DevEnv>devenv.exe</DevEnv>
+	</PropertyGroup>
+	
+	<!-- Build configuration: DEBUG/RELEASE, Any CPU/x86/Win32/x64 -->
+	<PropertyGroup>
+		<Platform Condition=" '$(Platform)' == '' AND '$(MSBuildBinPath)'=='$(WINDIR)\Microsoft.NET\Framework64\v3.5' ">x64</Platform>
+		<Platform Condition=" '$(Platform)' == '' ">Win32</Platform>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<BuildCondition>$(Configuration)|$(Platform)</BuildCondition>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(BuildCondition)' == 'Debug|Win32' ">
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(BuildCondition)' == 'Release|x64' ">
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReferences Include="$(EarlgreyDir)\src\Earlgrey.sln">
+			<Configuration>$(Configuration)</Configuration>
+			<Platform>$(Platform)</Platform>
+		</ProjectReferences>
+	</ItemGroup>
+			
+	<Target Name="Clean">
+		<Message Text="타겟: Clean" />
+		
+		<!-- TODO: 개선 -->
+		<Exec 
+			Command="$(DevEnv) $(Quot)%(ProjectReferences.FullPath)$(Quot) /Clean $(Quot)%(ProjectReferences.Configuration)|%(ProjectReferences.Platform)$(Quot)" 
+			ContinueOnError="false" 
+			IgnoreExitCode="false" 
+		/> 
+	</Target>
+
+	<Target Name="Build">
+		<Message Text="타겟: Build" />
+		<Message Text="빌드 조건: '$(BuildCondition)'" Importance="high" />
+		
+		<Exec 
+			Command="$(DevEnv) $(Quot)%(ProjectReferences.FullPath)$(Quot) /Build $(Quot)%(ProjectReferences.Configuration)|%(ProjectReferences.Platform)$(Quot)" 
+			ContinueOnError="false" 
+			IgnoreExitCode="false" 
+		/> 
+	</Target>
+
+	<Target Name="Rebuild" DependsOnTargets="Clean; Build">
+		<Message Text="타겟: Rebuild" />
+	</Target>
+
+</Project>
