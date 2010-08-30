@@ -17,9 +17,6 @@
 	<!-- Folders -->
 	<PropertyGroup>
 		<RootDir>$(MSBuildProjectDirectory)</RootDir>
-		
-		<SharedDir>$(RootDir)\..\Shared</SharedDir>
-		<EarlgreyDir>$(SharedDir)\Earlgrey</EarlgreyDir>
 	</PropertyGroup>
 
 	<!-- Tools -->
@@ -42,7 +39,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReferences Include="$(EarlgreyDir)\src\Earlgrey.sln">
+		<ProjectReferences Include="$(RootDir)\Projects.sln">
 			<Configuration>$(Configuration)</Configuration>
 			<Platform>$(Platform)</Platform>
 			<BuildCondition>%(Configuration)|%(Platform)</BuildCondition>
@@ -52,7 +49,6 @@
 	<Target Name="Clean">
 		<Message Text="타겟: Clean" />
 		
-		<!-- TODO: 개선 -->
 		<Exec 
 			Command="$(DevEnv) $(Quot)%(ProjectReferences.FullPath)$(Quot) /Clean $(Quot)%(ProjectReferences.BuildCondition)$(Quot)" 
 			ContinueOnError="false" 
